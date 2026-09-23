@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Cities in One Suitcase</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <header class="intro">
+      <p class="eyebrow">AN INTERACTIVE STORY</p>
+      <h1>Two Cities in One Suitcase</h1>
+      <p>Some things travel farther than we do.</p>
+    </header>
+
+    <section class="story" aria-label="Interactive suitcase">
+      <div class="suitcase" id="suitcase">
+        <div class="suitcase-lid" id="suitcaseLid">
+          <span>VIVIAN'S SUITCASE</span>
+        </div>
+
+        <div class="suitcase-inside" id="suitcaseInside" hidden>
+          <p class="inside-title">What did I bring with me?</p>
+
+          <div class="objects">
+            <button class="object" type="button" data-item="scarf">
+              <span class="object-icon">🧣</span>
+              <span>Scarf</span>
+            </button>
+
+            <button class="object" type="button" data-item="ticket">
+              <span class="object-icon">🎫</span>
+              <span>Ticket</span>
+            </button>
+
+            <button class="object" type="button" data-item="note">
+              <span class="object-icon">✉️</span>
+              <span>Note</span>
+            </button>
+          </div>
+
+          <div class="memory" id="memory">
+            Choose an object to uncover its story.
+          </div>
+
+          <label for="message">Leave a thought inside the suitcase:</label>
+          <input
+            id="message"
+            type="text"
+            maxlength="80"
+            placeholder="Type something you want to remember"
+          >
+
+          <p class="saved-message" id="savedMessage"></p>
+        </div>
+      </div>
+
+      <button class="main-button" id="toggleButton" type="button">
+        Open the suitcase
+      </button>
+
+      <p class="status" id="status">The suitcase is closed.</p>
+    </section>
+
+    <footer>
+      A small story about carrying home with you.
+    </footer>
+  </main>
+</body>
+</html>

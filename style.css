@@ -1,0 +1,273 @@
+:root {
+  --ink: #292b3a;
+  --muted: #696b78;
+  --paper: #fffaf0;
+  --suitcase: #a66348;
+  --suitcase-dark: #754330;
+  --gold: #e6bd79;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 18% 20%, #f7dfd1 0, transparent 35%),
+    radial-gradient(circle at 85% 80%, #d8dfeb 0, transparent 35%),
+    #eee9e3;
+  transition: background-color 0.5s ease;
+}
+
+.page {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 48px 0 28px;
+  text-align: center;
+}
+
+.intro .eyebrow {
+  margin: 0;
+  color: var(--suitcase-dark);
+  font: 700 12px Arial, sans-serif;
+  letter-spacing: 0.3em;
+}
+
+h1 {
+  margin: 14px 0 10px;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: normal;
+  line-height: 1.08;
+}
+
+.intro > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.story {
+  margin: 48px auto 0;
+}
+
+.suitcase {
+  position: relative;
+  width: min(620px, 100%);
+  margin: 0 auto;
+  padding-top: 28px;
+}
+
+.suitcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 120px;
+  height: 42px;
+  border: 12px solid var(--suitcase-dark);
+  border-radius: 24px 24px 0 0;
+  transform: translateX(-50%);
+}
+
+.suitcase-lid,
+.suitcase-inside {
+  position: relative;
+  border: 12px solid var(--suitcase-dark);
+  border-radius: 22px;
+  box-shadow: 0 24px 45px #38271f35;
+}
+
+.suitcase-lid {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  padding: 28px;
+  color: var(--paper);
+  background:
+    linear-gradient(90deg,
+      transparent 12%,
+      var(--gold) 12%,
+      var(--gold) 15%,
+      transparent 15%,
+      transparent 85%,
+      var(--gold) 85%,
+      var(--gold) 88%,
+      transparent 88%),
+    var(--suitcase);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.suitcase-lid span {
+  padding: 16px 22px;
+  border: 1px solid #f8e6cc;
+  background: #75433095;
+  font: 700 14px Arial, sans-serif;
+  letter-spacing: 0.2em;
+}
+
+.suitcase.is-open .suitcase-lid {
+  min-height: 100px;
+  transform: rotate(-3deg);
+  opacity: 0.85;
+}
+
+.suitcase-inside {
+  margin-top: 12px;
+  padding: 30px;
+  background: var(--paper);
+  text-align: left;
+}
+
+.inside-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.objects {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.object {
+  width: 140px;
+  min-height: 125px;
+  border: 1px solid #cbbda9;
+  border-radius: 12px;
+  color: var(--ink);
+  background: #f2e6d6;
+  cursor: pointer;
+  font: 16px Georgia, serif;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.object:hover,
+.object:focus-visible {
+  background: #e9d1b7;
+  transform: translateY(-5px);
+}
+
+.object-icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 42px;
+}
+
+.memory {
+  min-height: 100px;
+  margin: 24px 0;
+  padding: 20px;
+  border-left: 4px solid var(--suitcase);
+  background: #f3eae0;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #bba995;
+  border-radius: 8px;
+  color: var(--ink);
+  background: white;
+  font: 16px Georgia, serif;
+}
+
+input:focus-visible,
+.main-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.saved-message {
+  min-height: 24px;
+  color: var(--suitcase-dark);
+  font-style: italic;
+}
+
+.main-button {
+  margin-top: 30px;
+  padding: 15px 28px;
+  border: 0;
+  border-radius: 30px;
+  color: white;
+  background: var(--suitcase-dark);
+  cursor: pointer;
+  font: 16px Arial, sans-serif;
+}
+
+.main-button:hover {
+  background: #512b20;
+}
+
+.status,
+footer {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 55px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding-top: 32px;
+  }
+
+  .story {
+    margin-top: 32px;
+  }
+
+  .suitcase-lid {
+    min-height: 210px;
+  }
+
+  .suitcase-inside {
+    padding: 18px;
+  }
+
+  .objects {
+    gap: 8px;
+  }
+
+  .object {
+    width: 33%;
+    min-height: 105px;
+    padding: 8px 2px;
+    font-size: 14px;
+  }
+
+  .object-icon {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+.object[aria-pressed="true"] {
+  background: #e6bd79;
+  border: 2px solid #754330;
+  transform: translateY(-5px);
+}
